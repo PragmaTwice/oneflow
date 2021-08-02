@@ -31,6 +31,7 @@ Args:
 """,
 )
 
+
 add_docstr(
     oneflow.F.adaptive_avg_pool2d,
     r"""
