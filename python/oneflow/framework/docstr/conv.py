@@ -13,6 +13,28 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 """
-from .math_ops import *
-from .random import *
-from .conv import *
+import oneflow
+from oneflow.framework.docstr.utils import add_docstr
+
+add_docstr(
+    oneflow.F.conv1d,
+    r"""
+    conv1d(x: Tensor) -> Tensor
+
+    demo only
+
+    .. math::
+
+        \text{y}_{i} = \sin(\text{x}_{i})
+
+    """,
+)
+add_docstr(
+    oneflow.F.conv2d,
+    r"""
+    conv2d(x: Tensor) -> Tensor
+
+    just demo
+    
+    """,
+)
