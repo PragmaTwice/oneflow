@@ -6,4 +6,6 @@ Functional operations for neural networks
 .. autofunction:: conv1d
 .. autofunction:: conv2d
 .. autofunction:: adaptive_avg_pool1d
+.. autofunction:: adaptive_avg_pool2d
+.. autofunction:: adaptive_avg_pool3d
 
