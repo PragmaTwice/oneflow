@@ -13,8 +13,20 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 """
-from .math_ops import *
-from .random import *
-from .conv import *
-from .pooling import *
+import oneflow
+from oneflow.framework.docstr.utils import add_docstr
 
+add_docstr(
+    oneflow.F.adaptive_avg_pool1d,
+    r"""
+adaptive_avg_pool1d(input, output_size) -> Tensor
+
+Applies a 1D adaptive average pooling over an input signal composed of
+several input planes.
+
+See :class:`~oneflow.nn.AdaptiveAvgPool1d` for details and output shape.
+
+Args:
+    output_size: the target output size (single integer)
+""",
+)
