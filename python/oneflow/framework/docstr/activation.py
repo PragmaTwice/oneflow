@@ -13,8 +13,17 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 """
-from .math_ops import *
-from .random import *
-from .conv import *
-from .pooling import *
-from .activation import *
+import oneflow
+from oneflow.framework.docstr.utils import add_docstr
+
+add_docstr(
+    oneflow.F.relu,
+    r"""
+    relu(Tensor x, *, Bool inplace=False) -> Tensor
+
+    Applies the rectified linear unit function element-wise. See
+    :class:`~oneflow.nn.ReLU` for more details.
+
+    """,
+)
+

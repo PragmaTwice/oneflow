@@ -30,8 +30,6 @@ Args:
     output_size: the target output size (single integer)
 """,
 )
-
-
 add_docstr(
     oneflow.F.adaptive_avg_pool2d,
     r"""
@@ -47,7 +45,6 @@ Args:
         double-integer tuple)
 """,
 )
-
 add_docstr(
     oneflow.F.adaptive_avg_pool3d,
     r"""
