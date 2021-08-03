@@ -273,7 +273,66 @@ details.
 
     """,
 )
+add_docstr(
+    oneflow.F.leaky_relu,
+    r"""
+leaky_relu(x: Tensor, *,  alpha :Float) -> Tensor
 
+Applies element-wise,
+:math:`\text{LeakyReLU}(x) = \max(0, x) + \text{negative\_slope} * \min(0, x)`
+
+See :class:`~oneflow.nn.LeakyReLU` for more details.
+
+    """,
+)
+add_docstr(
+    oneflow.F.elu,
+    r"""
+elu(x: Tensor, *,  alpha :Float) -> Tensor
+
+Applies element-wise,
+    :math:`\text{ELU}(x) = \max(0,x) + \min(0, \alpha * (\exp(x) - 1))`.
+
+    See :class:`~oneflow.nn.ELU` for more details.
+    
+For examples:
+
+.. code-block:: python
+
+    >>> import numpy as np
+    >>> import oneflow as flow
+    >>> x = np.array([-0.5, 0, 0.5]).astype(np.float32)
+    >>> input = flow.Tensor(x)
+    >>> out = flow.nn.functional.elu(input,alpha=1.0)
+    >>> out
+    tensor([-0.3935,  0.    ,  0.5   ], dtype=oneflow.float32)
+    """,
+)
+add_docstr(
+    oneflow.F.selu,
+    r"""
+selu(x: Tensor, *) -> Tensor
+
+Applies element-wise,
+    :math:`\text{SELU}(x) = scale * (\max(0,x) + \min(0, \alpha * (\exp(x) - 1)))`,
+    with :math:`\alpha=1.6732632423543772848170429916717` and
+    :math:`scale=1.0507009873554804934193349852946`.
+
+    See :class:`~oneflow.nn.SELU` for more details.
+
+For examples:
+
+.. code-block:: python
+
+    >>> import numpy as np
+    >>> import oneflow as flow
+    >>> x = np.array([1, 2, 3]).astype(np.float32)
+    >>> input = flow.Tensor(x)
+    >>> out = flow.nn.functional.selu(input)
+    >>> out
+    tensor([1.0507, 2.1014, 3.1521], dtype=oneflow.float32)
+    """,
+)
 
 
 
