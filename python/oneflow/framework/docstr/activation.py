@@ -100,82 +100,130 @@ add_docstr(
         >>> out = flow.F.log_sigmoid(input)
         >>> out
         tensor([-0.9741, -0.6931, -0.4741], dtype=oneflow.float32)
-        
+
     See :class:`~oneflow.nn.LogSigmoid` for more details.
 
     """,
 )
 
-# add_docstr(
-#     oneflow.F.softsign,
-#     r"""
-#     softsign(x: Tensor, *) -> Tensor 
+add_docstr(
+    oneflow.F.softsign,
+    r"""
+    softsign(x: Tensor) -> Tensor 
 
-#     The formula is: 
+    The formula is: 
     
-#     .. math::  
+    .. math::  
     
-#         softsign(x) = \frac{x}{1 + |x|}
+        softsign(x) = \frac{x}{1 + |x|}
+    
+    For example:
+    
+    .. code-block:: python
+    
+        >>> import numpy as np
+        >>> import oneflow as flow
+        >>> x = np.array([1, 2, 3]).astype(np.float32)
+        >>> input = flow.Tensor(x) 
+        >>> out = flow.F.softsign(input)
+        >>> out
+        tensor([0.5   , 0.6667, 0.75  ], dtype=oneflow.float32)
  
-#     See :class:`~oneflow.nn.Softsign` for more details.
+    See :class:`~oneflow.nn.Softsign` for more details.
     
-#     """,
-# )
+    """,
+)
 
 
-# add_docstr(
-#     oneflow.F.tanh,
-#     r""" 
-#     tanh(x: Tensor) -> Tensor 
+add_docstr(
+    oneflow.F.tanh,
+    r""" 
+    tanh(x: Tensor) -> Tensor 
 
-#     This operator computes the hyperbolic tangent value of Tensor.
+    This operator computes the hyperbolic tangent value of Tensor.
 
-#     The equation is:
+    The equation is:
 
-#     .. math::
+    .. math::
 
-#         out = \frac{e^x-e^{-x}}{e^x+e^{-x}}
+        out = \frac{e^x-e^{-x}}{e^x+e^{-x}}
+    For example:
 
-#     See :class:`~oneflow.nn.Tanh` for more details.
+    .. code-block:: python
+
+        >>> import numpy as np
+        >>> import oneflow as flow
+        
+        >>> x = np.array([-1, 0, 1]).astype(np.float32)
+        >>> input = flow.Tensor(x)    
+        >>> out = flow.F.tanh(input)
+        >>> out
+        tensor([-0.7616,  0.    ,  0.7616], dtype=oneflow.float32)
+
+    See :class:`~oneflow.nn.Tanh` for more details.
     
-#     """,
-# )
+    """,
+)
 
-# add_docstr(
-#     oneflow.F.silu,
-#     r""" 
-#     tanh(x: Tensor, *) -> Tensor 
+add_docstr(
+    oneflow.F.silu,
+    r""" 
+    tanh(x: Tensor) -> Tensor 
 
-#     .. math::
+    .. math::
     
-#         \text{silu}(x) = x * sigmoid(x)
+        \text{silu}(x) = x * sigmoid(x)
+   For example:
     
+    .. code-block:: python
     
+        >>> import numpy as np
+        >>> import oneflow as flow
 
 
-#     See :class:`~oneflow.nn.SiLU` for more details.
+        >>> x = np.array([1, 2, 3]).astype(np.float32)
+        >>> input = flow.Tensor(x)       
+        >>> out = flow.F.silu(input)
+        >>> out
+        tensor([0.7311, 1.7616, 2.8577], dtype=oneflow.float32)
+
+    See :class:`~oneflow.nn.SiLU` for more details.
     
-#     """,
-# )
+    """,
+)
 
 
 
-# add_docstr(
-#     oneflow.F.mish,
-#     r""" 
-#     (x: Tensor, *) -> Tensor 
+add_docstr(
+    oneflow.F.mish,
+    r""" 
+    (x: Tensor) -> Tensor 
 
-#    Applies the element-wise function:
+   Applies the element-wise function:
 
-#     .. math::
-#         \text{mish}(x) = x * \text{tanh}(\text{softplus}(x))
+    .. math::
+        \text{mish}(x) = x * \text{tanh}(\text{softplus}(x))
 
-
-#     See :
-#     class:`~oneflow.nn.Mish` for more details.
     
-#     """,
-# )
+    For example:
+
+    .. code-block:: python
+
+        >>> import numpy as np
+        >>> import oneflow as flow
+        
+        >>> x = np.array([1, 2, 3]).astype(np.float32)
+        >>> input = flow.Tensor(x)       
+
+        >>> out = flow.F.mish(input)
+        >>> out
+        tensor([0.8651, 1.944 , 2.9865], dtype=oneflow.float32)
+
+    See :
+    class:`~oneflow.nn.Mish` for more details.
+    
+    """,
+)
 
 
 # add_docstr(
