@@ -20,17 +20,36 @@ add_docstr(
     oneflow.F.prelu,  
     r"""
     prelu(x: Tensor, alpha: Tensor) -> Tensor 
+    Gelu activation operator.
 
-   Applies the element-wise function:
+    The equation is: Applies the element-wise function:
 
     .. math::
-        prelu(x) = \\max(0,x) + a * \\min(0,x)
+        prelu(x) = \\max(0,x) + alpha * \\min(0,x)
+    
 
     See
     :class:`~oneflow.nn.PReLU` for more details.
  
     """
 )
+add_docstr(
+    oneflow.F.gelu,  
+    r"""
+    gelu(x: Tensor) -> Tensor 
+
+    Applies the element-wise function:
+
+    .. math::
+          out = 0.5 * x * (1 + tanh(\\sqrt{\\frac{2}{\\pi}} * (x + 0.044715x^{3})))
+
+    See    
+    :class:`~oneflow.nn.GELU` for more details.
+ 
+    """
+)
+
+
 
 add_docstr(
     oneflow.F.relu,
