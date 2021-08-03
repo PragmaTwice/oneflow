@@ -3,6 +3,7 @@ oneflow.nn.functional
 Functional operations for neural networks
 -------------------------------------------
 .. currentmodule:: oneflow.nn.functional
+
 .. autofunction:: conv1d
 .. autofunction:: conv2d
 .. autofunction:: adaptive_avg_pool1d
@@ -12,7 +13,27 @@ Functional operations for neural networks
 .. autofunction:: hardsigmoid
 .. autofunction:: hardswish
 .. autofunction:: sigmoid
+<<<<<<< HEAD
 .. autofunction:: pad
+=======
+.. autofunction::prelu
+.. autofunction::log_sigmoid 
+.. autofunction:: gelu
+.. autofunction::softsign
+.. autofunction::softmax 
+.. autofunction:: softplus
+.. autofunction::tanh 
+.. autofunction:: silu
+.. autofunction::mish 
+.. autofunction:: layer_norm
+.. autofunction::dropout 
+.. autofunction:: smooth_l1_loss
+
+
+
+
+
+>>>>>>> f741e8db9fb843870c59ef99132025a946673ff5
 
 
 
