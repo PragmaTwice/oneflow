@@ -24,6 +24,7 @@ conv1d(input, weight, bias=None, stride=1, padding=0, dilation=1, groups=1) -> T
 Applies a 1D convolution over an input signal composed of several input
 planes.
 
+
 See :class:`~oneflow.nn.Conv1d` for details and output shape.
 
     """,
@@ -36,6 +37,7 @@ conv2d(input, weight, bias=None, stride=1, padding=0, dilation=1, groups=1) -> T
 Applies a 2D convolution over an input image composed of several input
 planes.
 
+
 See :class:`~oneflow.nn.Conv2d` for details and output shape.
     
     """,
@@ -47,6 +49,7 @@ conv3d(input, weight, bias=None, stride=1, padding=0, dilation=1, groups=1) -> T
 
 Applies a 3D convolution over an input image composed of several input
 planes.
+
 
 See :class:`~oneflow.nn.Conv3d` for details and output shape.
     
