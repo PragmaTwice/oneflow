@@ -17,7 +17,6 @@ OneFlow API Reference
     functional
     module
     F
-    functional
     linalg
     image
     optim
