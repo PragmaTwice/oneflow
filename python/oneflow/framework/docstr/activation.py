@@ -105,6 +105,14 @@ add_docstr(
     .. math::
     
         \\text{silu}(x) = x * sigmoid(x)
+    
+    .. note::
+        See `Gaussian Error Linear Units (GELUs) <https://arxiv.org/abs/1606.08415>`_
+        where the SiLU (Sigmoid Linear Unit) was originally coined, and see
+        `Sigmoid-Weighted Linear Units for Neural Network Function Approximation
+        in Reinforcement Learning <https://arxiv.org/abs/1702.03118>`_ and `Swish:
+        a Self-Gated Activation Function <https://arxiv.org/abs/1710.05941v1>`_
+        where the SiLU was experimented with later.
 
     See :class:`~oneflow.nn.SiLU` for more details.
     
@@ -116,7 +124,7 @@ add_docstr(
 add_docstr(
     oneflow.F.mish,
     r""" 
-    mish(x: Tensor, *) -> Tensor 
+    (x: Tensor, *) -> Tensor 
 
    Applies the element-wise function:
 
@@ -131,9 +139,8 @@ add_docstr(
 
 
 add_docstr(
-    oneflow.F.layer_norm,
-    r"""    
-    layer_norm(x: Tensor, *, Int64 begin_norm_axis, Int64 begin_params_axis, Double epsilon) -> Tensor 
+      r"""    
+    layer_norm(x: Tensor, *, begin_norm_axis: Int64, begin_params_axis: Int64, epsilon: float) -> Tensor 
 
     Applies the element-wise function:
 

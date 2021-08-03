@@ -23,11 +23,9 @@ add_docstr(
 
     During training, randomly zeroes some of the elements of the input
     tensor with probability :attr:`p` using samples from a Bernoulli
-    distribution. Each channel will be zeroed out independently on every forward
-    call.
-    
-    See
-    :class:`~oneflow.nn.Dropout` for more details.
+    distribution.
+
+    See :class:`~oneflow.nn.Dropout` for details.   
  
     """
 )
