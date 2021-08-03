@@ -103,6 +103,57 @@ add_docstr(
         tensor([-0.9741, -0.6931, -0.4741], dtype=oneflow.float32)
 
     See :class:`~oneflow.nn.LogSigmoid` for more details.
+
+    """,
+)
+
+add_docstr(
+    oneflow.F.softsign,
+    r"""
+    softsign(x: Tensor, *) -> Tensor 
+
+    The formula is: 
+    
+    .. math::  
+    
+        softsign(x) = \frac{x}{1 + |x|}
+ 
+    See :class:`~oneflow.nn.Softsign` for more details.
+    
+    """,
+)
+
+
+add_docstr(
+    oneflow.F.tanh,
+    r""" 
+    tanh(x: Tensor) -> Tensor 
+
+    This operator computes the hyperbolic tangent value of Tensor.
+
+    The equation is:
+
+    .. math::
+
+        out = \\frac{e^x-e^{-x}}{e^x+e^{-x}}
+
+    See :class:`~oneflow.nn.Tanh` for more details.
+    
+    """,
+)
+
+add_docstr(
+    oneflow.F.silu,
+    r""" 
+    tanh(x: Tensor, *) -> Tensor 
+
+    silu() activation:
+
+    .. math::
+    
+        \text{silu}(x) = x * sigmoid(x)
+
+    See :class:`~oneflow.nn.SiLU` for more details.
     
     """,
 )

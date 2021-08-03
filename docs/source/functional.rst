@@ -16,6 +16,14 @@ Functional operations for neural networks
 .. autofunction::prelu
 .. autofunction::log_sigmoid 
 .. autofunction:: gelu
+.. autofunction::softsign
+.. autofunction::softmax 
+.. autofunction:: softplus
+.. autofunction::tanh 
+.. autofunction:: silu
+
+
+
 
 
 
