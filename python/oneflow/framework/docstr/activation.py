@@ -106,99 +106,6 @@ add_docstr(
     """,
 )
 
-# add_docstr(
-#     oneflow.F.softsign,
-#     r"""
-#     softsign(x: Tensor, *) -> Tensor 
-
-#     The formula is: 
-    
-#     .. math::  
-    
-#         softsign(x) = \frac{x}{1 + |x|}
- 
-#     See :class:`~oneflow.nn.Softsign` for more details.
-    
-#     """,
-# )
-
-
-# add_docstr(
-#     oneflow.F.tanh,
-#     r""" 
-#     tanh(x: Tensor) -> Tensor 
-
-#     This operator computes the hyperbolic tangent value of Tensor.
-
-#     The equation is:
-
-#     .. math::
-
-#         out = \frac{e^x-e^{-x}}{e^x+e^{-x}}
-
-#     See :class:`~oneflow.nn.Tanh` for more details.
-    
-#     """,
-# )
-
-# add_docstr(
-#     oneflow.F.silu,
-#     r""" 
-#     tanh(x: Tensor, *) -> Tensor 
-
-#     .. math::
-    
-#         \text{silu}(x) = x * sigmoid(x)
-    
-    
-
-
-#     See :class:`~oneflow.nn.SiLU` for more details.
-    
-#     """,
-# )
-
-
-
-# add_docstr(
-#     oneflow.F.mish,
-#     r""" 
-#     (x: Tensor, *) -> Tensor 
-
-#    Applies the element-wise function:
-
-#     .. math::
-#         \text{mish}(x) = x * \text{tanh}(\text{softplus}(x))
-
-
-#     See :
-#     class:`~oneflow.nn.Mish` for more details.
-    
-#     """,
-# )
-
-
-# add_docstr(
-#     oneflow.F.layer_norm,
-#     r"""    
-#     layer_norm(x: Tensor, *, begin_norm_axis: Int64, begin_params_axis: Int64, epsilon: float) -> Tensor 
-
-#     Applies the element-wise function:
-
-#     .. math::
-#         y = \frac{x - \mathrm{E}[x]}{ \sqrt{\mathrm{Var}[x] + \epsilon}} * \gamma + \beta
-
-
-#     See :
-#     class:`~oneflow.nn.LayerNorm` for more details.
-    
-#     """,
-# )
-
-
-
-
-
 add_docstr(
     oneflow.F.relu,
     r"""
@@ -260,6 +167,18 @@ Applies the element-wise function :math:`\text{Sigmoid}(x) = \frac{1}{1 + \exp(-
 
 See :class:`~oneflow.nn.Sigmoid` for more details.
 
+For examples:
+
+.. code-block:: python
+
+    >>> import numpy as np
+    >>> import oneflow as flow
+    >>> x = flow.Tensor(np.array([0.81733328, 0.43621480, 0.10351428]))
+    >>> input = flow.Tensor(x)
+    >>> out = flow.nn.functional.sigmoid(input)
+    >>> out
+    tensor([0.6937, 0.6074, 0.5259], dtype=oneflow.float32)
+
     """,
 )
 
@@ -294,7 +213,7 @@ Applies element-wise,
     :math:`\text{ELU}(x) = \max(0,x) + \min(0, \alpha * (\exp(x) - 1))`.
 
     See :class:`~oneflow.nn.ELU` for more details.
-    
+
 For examples:
 
 .. code-block:: python
