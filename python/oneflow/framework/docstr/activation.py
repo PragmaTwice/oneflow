@@ -26,7 +26,18 @@ add_docstr(
 
     .. math::
         prelu(x) = \\max(0,x) + alpha * \\min(0,x)
-    
+    For example:
+
+     .. code-block:: python
+
+        >>> import numpy as np
+        >>> import oneflow as flow
+        
+        >>> m = flow.nn.PReLU()
+        >>> input = flow.Tensor(np.asarray([[[[1, -2], [3, 4]]]]), dtype=flow.float32)
+        >>> print(m(input).numpy())
+        [[[[ 1.  -0.5]
+           [ 3.   4. ]]]]
 
     See
     :class:`~oneflow.nn.PReLU` for more details.
@@ -38,15 +49,62 @@ add_docstr(
     r"""
     gelu(x: Tensor) -> Tensor 
 
-    Applies the element-wise function:
+    The equation is:
 
     .. math::
-          out = 0.5 * x * (1 + tanh(\\sqrt{\\frac{2}{\\pi}} * (x + 0.044715x^{3})))
+        out = 0.5 * x * (1 + tanh(\\sqrt{\\frac{2}{\\pi}} * (x + 0.044715x^{3})))
+    
+    For example:
+
+    .. code-block:: python
+
+        >>> import numpy as np
+        >>> import oneflow as flow
+        
+        >>> x = np.array([-0.5, 0, 0.5]).astype(np.float32)
+        >>> input = flow.Tensor(x)
+        >>> gelu = flow.nn.GELU()
+
+        >>> out = gelu(input)
+        >>> out
+        tensor([-0.1543,  0.    ,  0.3457], dtype=oneflow.float32)
+
 
     See    
     :class:`~oneflow.nn.GELU` for more details.
  
     """
+)
+
+add_docstr(
+    oneflow.F.log_sigmoid,
+    r"""
+    log_sigmoid(x: Tensor) -> Tensor 
+
+    Applies the element-wise function:
+
+    .. math::
+        \\text{log_sigmoid}(x) = \\log\\left(\\frac{ 1 }{ 1 + \\exp(-x)}\\right)
+
+    For example:
+
+    .. code-block:: python
+
+
+        >>> import numpy as np
+        >>> import oneflow as flow
+        
+        >>> x = np.array([-0.5, 0, 0.5]).astype(np.float32)
+        >>> input = flow.Tensor(x)
+        >>> logsigmoid = flow.nn.LogSigmoid()
+
+        >>> out = logsigmoid(input)
+        >>> out
+        tensor([-0.9741, -0.6931, -0.4741], dtype=oneflow.float32)
+
+    See :class:`~oneflow.nn.LogSigmoid` for more details.
+    
+    """,
 )
 
 
