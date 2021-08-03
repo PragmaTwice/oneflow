@@ -17,7 +17,7 @@ import oneflow
 from oneflow.framework.docstr.utils import add_docstr
 
 add_docstr(
-    oneflow.nn.functional.prelu,  
+    oneflow.F.prelu,  
     r"""
     prelu(x: Tensor, alpha: Tensor) -> Tensor 
 
@@ -29,16 +29,16 @@ add_docstr(
     See
     :class:`~oneflow.nn.PReLU` for more details.
  
-
+    """
 )
 
 add_docstr(
     oneflow.F.relu,
     r"""
-relu(x: Tensor, inplace: bool =False) -> Tensor
+    relu(x: Tensor, inplace: bool =False) -> Tensor
 
-Applies the rectified linear unit function element-wise. See
-:class:`~oneflow.nn.ReLU` for more details.
+    Applies the rectified linear unit function element-wise. See
+    :class:`~oneflow.nn.ReLU` for more details.
 
     """,
 )
