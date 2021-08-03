@@ -9,5 +9,7 @@ Functional operations for neural networks
 .. autofunction:: adaptive_avg_pool2d
 .. autofunction:: adaptive_avg_pool3d
 .. autofunction:: relu
+.. autofunction:: hardsigmoid
+
 
 

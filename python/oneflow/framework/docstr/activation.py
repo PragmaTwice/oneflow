@@ -19,11 +19,32 @@ from oneflow.framework.docstr.utils import add_docstr
 add_docstr(
     oneflow.F.relu,
     r"""
-    relu(Tensor x, *, Bool inplace=False) -> Tensor
+relu(Tensor x, inplace=False) -> Tensor
 
-    Applies the rectified linear unit function element-wise. See
-    :class:`~oneflow.nn.ReLU` for more details.
+Applies the rectified linear unit function element-wise. See
+:class:`~oneflow.nn.ReLU` for more details.
 
     """,
 )
+add_docstr(
+    oneflow.F.hardsigmoid,
+    r"""
+hardsigmoid(Tensor x)-> Tensor
+
+Applies the element-wise function
+
+.. math::
+    \text{Hardsigmoid}(x) = \begin{cases}
+        0 & \text{if~} x \le -3, \\
+        1 & \text{if~} x \ge +3, \\
+        x / 6 + 1 / 2 & \text{otherwise}
+    \end{cases}
+
+Args:
+    inplace: If set to ``True``, will do this operation in-place. Default: ``False``
+
+See :class:`~oneflow.nn.Hardsigmoid` for more details.
+    """,
+)
+
 
