@@ -30,14 +30,16 @@ Args:
     output_size: the target output size (single integer)
 
 For examples:
+
 .. code-block:: python
+
     >>> import oneflow as flow
     >>> import numpy as np
     >>> arr = np.array([[[ 0.0558, -0.6875, -1.6544, -0.6226,  0.1018,  0.0502, -1.2538, 0.1491]]])
     >>> input = flow.Tensor(arr,dtype=flow.float32)
     >>> flow.nn.functional.adaptive_avg_pool1d(input, output_size=[4])
     tensor([[[-0.3158, -1.1385,  0.076 , -0.5524]]], dtype=oneflow.float32)
-    
+
 """,
 )
 add_docstr(
@@ -55,7 +57,9 @@ Args:
         double-integer tuple)
 
 For examples:
+
 .. code-block:: python
+
     >>> import oneflow as flow
     >>> import numpy as np
     >>> arr = np.array([[[[ 0.1004,  0.0488, -1.0515,  0.9466],[ 0.4538,  0.2361,  1.3437,  0.398 ],[ 0.0558, -0.6875, -1.6544, -0.6226],[ 0.1018,  0.0502, -1.2538,  0.1491]]]])
@@ -63,6 +67,7 @@ For examples:
     >>> outputs = flow.nn.functional.adaptive_avg_pool2d(input, (2, 2))
 """,
 )
+
 add_docstr(
     oneflow.F.adaptive_avg_pool3d,
     r"""
@@ -78,7 +83,9 @@ Args:
         triple-integer tuple)
 
 For examples:
+
 .. code-block:: python
+
     >>> import oneflow as flow
     >>> import numpy as np
     >>> input = flow.Tensor(np.random.randn(1,1,4,4,4),dtype=flow.float32)
