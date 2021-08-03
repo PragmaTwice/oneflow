@@ -161,6 +161,42 @@ add_docstr(
 
 
 add_docstr(
+    oneflow.F.mish,
+    r""" 
+    mish(x: Tensor, *) -> Tensor 
+
+  Applies the element-wise function:
+
+    .. math::
+        \\text{Mish}(x) = x * \\text{Tanh}(\\text{Softplus}(x))
+
+
+    See :class:`~oneflow.nn.Mish` for more details.
+    
+    """,
+)
+
+
+add_docstr(
+    oneflow.F.layer_norm,
+    r"""    
+    layer_norm(x: Tensor, *, Int64 begin_norm_axis, Int64 begin_params_axis, Double epsilon) -> Tensor 
+
+    Applies the element-wise function:
+
+    .. math::
+        y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta
+
+
+    See :class:`~oneflow.nn.LayerNorm` for more details.
+    
+    """,
+)
+
+
+
+
+add_docstr(
     oneflow.F.relu,
     r"""
     relu(x: Tensor, inplace: bool =False) -> Tensor
