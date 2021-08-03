@@ -13,6 +13,26 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 """
-from .math_ops import *
-from .random import *
-from .activation import *
+import oneflow
+from oneflow.framework.docstr.utils import add_docstr
+
+add_docstr(
+    oneflow.nn.functional.prelu,  
+    r"""
+    prelu(x: Tensor, alpha: Tensor) -> Tensor 
+
+   Applies the element-wise function:
+
+    .. math::
+        PReLU(x) = \\max(0,x) + a * \\min(0,x)
+
+    See
+    :class:`~oneflow.nn.PReLU` for more details.
+ 
+    """,
+)
+
+
+
+
+
