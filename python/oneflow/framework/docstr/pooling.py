@@ -29,7 +29,8 @@ See :class:`~oneflow.nn.AdaptiveAvgPool1d` for details and output shape.
 Args:
     output_size: the target output size (single integer)
 
-Examples::
+For examples:
+.. code-block:: python
     >>> import oneflow as flow
     >>> import numpy as np
     >>> arr = np.array([[[ 0.0558, -0.6875, -1.6544, -0.6226,  0.1018,  0.0502, -1.2538, 0.1491]]])
@@ -52,7 +53,9 @@ See :class:`~oneflow.nn.AdaptiveAvgPool2d` for details and output shape.
 Args:
     output_size: the target output size (single integer or
         double-integer tuple)
-Examples::
+
+For examples:
+.. code-block:: python
     >>> import oneflow as flow
     >>> import numpy as np
     >>> arr = np.array([[[[ 0.1004,  0.0488, -1.0515,  0.9466],[ 0.4538,  0.2361,  1.3437,  0.398 ],[ 0.0558, -0.6875, -1.6544, -0.6226],[ 0.1018,  0.0502, -1.2538,  0.1491]]]])
@@ -74,12 +77,12 @@ Args:
     output_size: the target output size (single integer or
         triple-integer tuple)
 
-Examples::
+For examples:
+.. code-block:: python
     >>> import oneflow as flow
     >>> import numpy as np
-    >>> arr = np.array([[[[ 0.1004,  0.0488, -1.0515,  0.9466],[ 0.4538,  0.2361,  1.3437,  0.398 ],[ 0.0558, -0.6875, -1.6544, -0.6226],[ 0.1018,  0.0502, -1.2538,  0.1491]]]])
-    >>> input = flow.Tensor(arr,dtype=flow.float32)
-    >>> outputs = flow.nn.functional.adaptive_avg_pool2d(input, (2, 2))
+    >>> input = flow.Tensor(np.random.randn(1,1,4,4,4),dtype=flow.float32)
+    >>> output = flow.nn.functional.adaptive_avg_pool3d(input, (2, 2, 2))
 """,
 )
 
