@@ -19,22 +19,36 @@ from oneflow.framework.docstr.utils import add_docstr
 add_docstr(
     oneflow.F.conv1d,
     r"""
-    conv1d(x: Tensor) -> Tensor
+conv1d(input, weight, bias=None, stride=1, padding=0, dilation=1, groups=1) -> Tensor
 
-    demo only
+Applies a 1D convolution over an input signal composed of several input
+planes.
 
-    .. math::
-
-        \text{y}_{i} = \sin(\text{x}_{i})
+See :class:`~oneflow.nn.Conv1d` for details and output shape.
 
     """,
 )
 add_docstr(
     oneflow.F.conv2d,
     r"""
-    conv2d(x: Tensor) -> Tensor
+conv2d(input, weight, bias=None, stride=1, padding=0, dilation=1, groups=1) -> Tensor
 
-    just demo
+Applies a 2D convolution over an input image composed of several input
+planes.
+
+See :class:`~oneflow.nn.Conv2d` for details and output shape.
+    
+    """,
+)
+add_docstr(
+    oneflow.F.conv3d,
+    r"""
+conv3d(input, weight, bias=None, stride=1, padding=0, dilation=1, groups=1) -> Tensor
+
+Applies a 3D convolution over an input image composed of several input
+planes.
+
+See :class:`~oneflow.nn.Conv3d` for details and output shape.
     
     """,
 )
