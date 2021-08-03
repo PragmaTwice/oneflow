@@ -19,7 +19,7 @@ from oneflow.framework.docstr.utils import add_docstr
 add_docstr(
     oneflow.F.relu,
     r"""
-relu(Tensor x, inplace=False) -> Tensor
+relu(x: Tensor, inplace: bool =False) -> Tensor
 
 Applies the rectified linear unit function element-wise. See
 :class:`~oneflow.nn.ReLU` for more details.
@@ -29,7 +29,7 @@ Applies the rectified linear unit function element-wise. See
 add_docstr(
     oneflow.F.hardsigmoid,
     r"""
-hardsigmoid(Tensor x)-> Tensor
+hardsigmoid(x: Tensor)-> Tensor
 
 Applies the element-wise function
 
@@ -44,6 +44,28 @@ Args:
     inplace: If set to ``True``, will do this operation in-place. Default: ``False``
 
 See :class:`~oneflow.nn.Hardsigmoid` for more details.
+    """,
+)
+add_docstr(
+    oneflow.F.hardswish,
+    r"""
+hardswish(x: Tensor)-> Tensor
+
+Applies the hardswish function, element-wise, as described in the paper:
+
+`Searching for MobileNetV3`_.
+
+.. math::
+    \text{Hardswish}(x) = \begin{cases}
+        0 & \text{if~} x \le -3, \\
+        x & \text{if~} x \ge +3, \\
+        x \cdot (x + 3) /6 & \text{otherwise}
+    \end{cases}
+
+See :class:`~oneflow.nn.Hardswish` for more details.
+
+.. _`Searching for MobileNetV3`:
+    https://arxiv.org/abs/1905.02244
     """,
 )
 
