@@ -224,5 +224,17 @@ See :class:`~oneflow.nn.Sigmoid` for more details.
     """,
 )
 
+add_docstr(
+    oneflow.F.hardtanh,
+    r"""
+hardtanh(input, min_val=-1., max_val=1.) -> Tensor
+
+Applies the HardTanh function element-wise. See :class:`~oneflow.nn.Hardtanh` for more
+details.
+
+    """,
+)
+
+
 
 

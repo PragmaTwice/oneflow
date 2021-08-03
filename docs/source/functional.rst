@@ -12,17 +12,18 @@ Functional operations for neural networks
 .. autofunction:: relu
 .. autofunction:: hardsigmoid
 .. autofunction:: hardswish
+.. autofunction:: hardtanh
 .. autofunction:: sigmoid
 .. autofunction:: pad
-.. autofunction::prelu
-.. autofunction::log_sigmoid 
+.. autofunction:: prelu
+.. autofunction:: log_sigmoid 
 .. autofunction:: gelu
-.. autofunction::softsign
-.. autofunction::softmax 
+.. autofunction:: softsign
+.. autofunction:: softmax 
 .. autofunction:: softplus
-.. autofunction::tanh 
+.. autofunction:: tanh 
 .. autofunction:: silu
-.. autofunction::mish 
+.. autofunction:: mish 
 .. autofunction:: layer_norm
-.. autofunction::dropout 
+.. autofunction:: dropout 
 .. autofunction:: smooth_l1_loss
