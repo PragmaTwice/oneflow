@@ -12,6 +12,7 @@ Functional operations for neural networks
 .. autofunction:: hardsigmoid
 .. autofunction:: hardswish
 .. autofunction:: sigmoid
+.. autofunction:: pad
 
 
 
