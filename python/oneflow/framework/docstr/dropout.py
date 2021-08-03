@@ -19,12 +19,57 @@ from oneflow.framework.docstr.utils import add_docstr
 add_docstr(
     oneflow.F.dropout,  
     r"""
-    dropout(x: Tensor, *, Float p, Generator generator=None) -> Tensor 
+    dropout(x: Tensor, p:float = 0.5, generator :Generator = None) -> Tensor 
 
     During training, randomly zeroes some of the elements of the input
     tensor with probability :attr:`p` using samples from a Bernoulli
     distribution.
 
+    Args:      
+        p: (float)probability of an element to be zeroed. Default: 0.5        
+        generator(Generator, optional):  a pseudorandom number generator for sampling
+    
+        
+
+    Shape:
+        - Input: :math:`(*)`. Input can be of any shape
+        - Output: :math:`(*)`. Output is of the same shape as input
+
+    For example:
+
+    .. code-block:: python
+
+        >>> import numpy as np
+        >>> import oneflow as flow
+
+       
+        >>> arr = np.array(
+        ...    [
+        ...        [-0.7797, 0.2264, 0.2458, 0.4163],
+        ...        [0.4299, 0.3626, -0.4892, 0.4141],
+        ...        [-1.4115, 1.2183, -0.5503, 0.6520],
+        ...    ]
+        ... )
+        >>> x = flow.Tensor(arr)
+        >>> y = flow.F.dropout(x,p=0) 
+        >>> y #doctest: +ELLIPSIS
+        tensor([[-0.7797,  0.2264,  0.2458,  0.4163],
+                ...
+                [-1.4115,  1.2183, -0.5503,  0.652 ]], dtype=oneflow.float32)
+
+        >>> arr = np.array(
+        ...    [
+        ...        [-0.7797, 0.2264, 0.2458, 0.4163],
+        ...        [0.4299, 0.3626, -0.4892, 0.4141],
+        ...        [-1.4115, 1.2183, -0.5503, 0.6520],
+        ...    ]
+        ... )
+        >>> x = flow.Tensor(arr)    
+        >>> generator = flow.Generator()
+        >>> y = flow.F.dropout(x,0.5,generator) 
+      
+
+    
     See :class:`~oneflow.nn.Dropout` for details.   
  
     """

@@ -24,6 +24,5 @@ Functional operations for neural networks
 .. autofunction:: tanh 
 .. autofunction:: silu
 .. autofunction:: mish 
-.. autofunction:: layer_norm
 .. autofunction:: dropout 
 .. autofunction:: smooth_l1_loss

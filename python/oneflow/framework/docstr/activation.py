@@ -147,6 +147,7 @@ add_docstr(
     .. math::
 
         out = \frac{e^x-e^{-x}}{e^x+e^{-x}}
+
     For example:
 
     .. code-block:: python
@@ -173,6 +174,7 @@ add_docstr(
     .. math::
     
         \text{silu}(x) = x * sigmoid(x)
+
    For example:
     
     .. code-block:: python
@@ -224,26 +226,6 @@ add_docstr(
     
     """,
 )
-
-
-# add_docstr(
-#     oneflow.F.layer_norm,
-#     r"""    
-#     layer_norm(x: Tensor, *, begin_norm_axis: Int64, begin_params_axis: Int64, epsilon: float) -> Tensor 
-
-#     Applies the element-wise function:
-
-#     .. math::
-#         y = \frac{x - \mathrm{E}[x]}{ \sqrt{\mathrm{Var}[x] + \epsilon}} * \gamma + \beta
-
-
-#     See :
-#     class:`~oneflow.nn.LayerNorm` for more details.
-    
-#     """,
-# )
-
-
 
 
 
