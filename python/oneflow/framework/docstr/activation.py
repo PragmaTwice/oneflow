@@ -26,135 +26,146 @@ add_docstr(
     .. math::
         prelu(x) = \\max(0,x) + alpha * \\min(0,x) 
 
+    For example:
+
+    .. code-block:: python
+
+        >>> import numpy as np
+        >>> import oneflow as flow
+        
+        >>> m = flow.nn.PReLU()
+        >>> x = flow.Tensor(np.asarray([[[[1, -2], [3, 4]]]]), dtype=flow.float32)
+        >>> alpha = flow.nn.Parameter(flow.Tensor(1, 1, 1).fill_(0.25))
+        >>> print(flow.F.prelu(x,alpha).numpy())
+        [[[[ 1.  -0.5]
+           [ 3.   4. ]]]]
+   
     See
     :class:`~oneflow.nn.PReLU` for more details.
  
     """
 )
-add_docstr(
-    oneflow.F.gelu,  
-    r"""
-    gelu(x: Tensor) -> Tensor 
 
-    The equation is:
 
-    .. math::
-        out = 0.5 * x * (1 + tanh(\\sqrt{\\frac{2}{\\pi}} * (x + 0.044715x^{3})))  
+# add_docstr(
+#     oneflow.F.gelu,  
+#     r"""
+#     gelu(x: Tensor) -> Tensor 
 
-    See    
-    :class:`~oneflow.nn.GELU` for more details.
+#     The equation is:
+
+#     .. math::
+#         out = 0.5 * x * (1 + tanh(\\sqrt{\\frac{2}{\\pi}} * (x + 0.044715x^{3})))  
+
+#     See    
+#     :class:`~oneflow.nn.GELU` for more details.
  
-    """
-)
+#     """
+# )
 
-add_docstr(
-    oneflow.F.log_sigmoid,
-    r"""
-    log_sigmoid(x: Tensor) -> Tensor 
+# add_docstr(
+#     oneflow.F.log_sigmoid,
+#     r"""
+#     log_sigmoid(x: Tensor) -> Tensor 
 
-    Applies the element-wise function:
+#     Applies the element-wise function:
 
-    .. math::
-        \\text{log_sigmoid}(x) = \\log\\left(\\frac{ 1 }{ 1 + \\exp(-x)}\\right)
+#     .. math::
+#         \\text{log_sigmoid}(x) = \\log\\left(\\frac{ 1 }{ 1 + \\exp(-x)}\\right)
    
-    See :class:`~oneflow.nn.LogSigmoid` for more details.
+#     See :class:`~oneflow.nn.LogSigmoid` for more details.
 
-    """,
-)
+#     """,
+# )
 
-add_docstr(
-    oneflow.F.softsign,
-    r"""
-    softsign(x: Tensor, *) -> Tensor 
+# add_docstr(
+#     oneflow.F.softsign,
+#     r"""
+#     softsign(x: Tensor, *) -> Tensor 
 
-    The formula is: 
+#     The formula is: 
     
-    .. math::  
+#     .. math::  
     
-        softsign(x) = \frac{x}{1 + |x|}
+#         softsign(x) = \frac{x}{1 + |x|}
  
-    See :class:`~oneflow.nn.Softsign` for more details.
+#     See :class:`~oneflow.nn.Softsign` for more details.
     
-    """,
-)
+#     """,
+# )
 
 
-add_docstr(
-    oneflow.F.tanh,
-    r""" 
-    tanh(x: Tensor) -> Tensor 
+# add_docstr(
+#     oneflow.F.tanh,
+#     r""" 
+#     tanh(x: Tensor) -> Tensor 
 
-    This operator computes the hyperbolic tangent value of Tensor.
+#     This operator computes the hyperbolic tangent value of Tensor.
 
-    The equation is:
+#     The equation is:
 
-    .. math::
+#     .. math::
 
-        out = \\frac{e^x-e^{-x}}{e^x+e^{-x}}
+#         out = \\frac{e^x-e^{-x}}{e^x+e^{-x}}
 
-    See :class:`~oneflow.nn.Tanh` for more details.
+#     See :class:`~oneflow.nn.Tanh` for more details.
     
-    """,
-)
+#     """,
+# )
 
-add_docstr(
-    oneflow.F.silu,
-    r""" 
-    tanh(x: Tensor, *) -> Tensor 
+# add_docstr(
+#     oneflow.F.silu,
+#     r""" 
+#     tanh(x: Tensor, *) -> Tensor 
 
-    .. math::
+#     .. math::
     
-        \\text{silu}(x) = x * sigmoid(x)
+#         \\text{silu}(x) = x * sigmoid(x)
     
-    .. note::
-        See `Gaussian Error Linear Units (GELUs) <https://arxiv.org/abs/1606.08415>`_
-        where the SiLU (Sigmoid Linear Unit) was originally coined, and see
-        `Sigmoid-Weighted Linear Units for Neural Network Function Approximation
-        in Reinforcement Learning <https://arxiv.org/abs/1702.03118>`_ and `Swish:        
-        a Self-Gated Activation Function <https://arxiv.org/abs/1710.05941v1>`_
-        where the SiLU was experimented with later.
-
-
-    See :class:`~oneflow.nn.SiLU` for more details.
     
-    """,
-)
 
 
-
-add_docstr(
-    oneflow.F.mish,
-    r""" 
-    (x: Tensor, *) -> Tensor 
-
-   Applies the element-wise function:
-
-    .. math::
-        \\text{mish}(x) = x * \\text{tanh}(\\text{softplus}(x))
-
-
-    See :class:`~oneflow.nn.Mish` for more details.
+#     See :class:`~oneflow.nn.SiLU` for more details.
     
-    """,
-)
+#     """,
+# )
 
 
-add_docstr(
-    oneflow.F.layer_norm,
-    r"""    
-    layer_norm(x: Tensor, *, begin_norm_axis: Int64, begin_params_axis: Int64, epsilon: float) -> Tensor 
 
-    Applies the element-wise function:
+# add_docstr(
+#     oneflow.F.mish,
+#     r""" 
+#     (x: Tensor, *) -> Tensor 
 
-    .. math::
-        y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta
+#    Applies the element-wise function:
+
+#     .. math::
+#         \\text{mish}(x) = x * \\text{tanh}(\\text{softplus}(x))
 
 
-    See :
-    class:`~oneflow.nn.LayerNorm` for more details.
+#     See :
+#     class:`~oneflow.nn.Mish` for more details.
     
-    """,
-)
+#     """,
+# )
+
+
+# add_docstr(
+#     oneflow.F.layer_norm,
+#     r"""    
+#     layer_norm(x: Tensor, *, begin_norm_axis: Int64, begin_params_axis: Int64, epsilon: float) -> Tensor 
+
+#     Applies the element-wise function:
+
+#     .. math::
+#         y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta
+
+
+#     See :
+#     class:`~oneflow.nn.LayerNorm` for more details.
+    
+#     """,
+# )
 
 
 
