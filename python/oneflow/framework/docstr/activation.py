@@ -24,7 +24,7 @@ add_docstr(
     Applies the element-wise function:
 
     .. math::
-        prelu(x) = \\max(0,x) + alpha * \\min(0,x) 
+        prelu(x) = max(0,x) + alpha * min(0,x) 
 
     For example:
 
@@ -32,8 +32,7 @@ add_docstr(
 
         >>> import numpy as np
         >>> import oneflow as flow
-        
-        >>> m = flow.nn.PReLU()
+
         >>> x = flow.Tensor(np.asarray([[[[1, -2], [3, 4]]]]), dtype=flow.float32)
         >>> alpha = flow.nn.Parameter(flow.Tensor(1, 1, 1).fill_(0.25))
         >>> print(flow.F.prelu(x,alpha).numpy())
@@ -47,36 +46,65 @@ add_docstr(
 )
 
 
-# add_docstr(
-#     oneflow.F.gelu,  
-#     r"""
-#     gelu(x: Tensor) -> Tensor 
+add_docstr(
+    oneflow.F.gelu,  
+    r"""
+    gelu(x: Tensor) -> Tensor 
 
-#     The equation is:
+    The equation is:
 
-#     .. math::
-#         out = 0.5 * x * (1 + tanh(\\sqrt{\\frac{2}{\\pi}} * (x + 0.044715x^{3})))  
+    .. math::
+         out = 0.5 * x * (1 + tanh(\sqrt{\frac{2}{\pi}} * (x + 0.044715x^{3})))
+    
+    For example:
 
-#     See    
-#     :class:`~oneflow.nn.GELU` for more details.
+    .. code-block:: python
+
+        >>> import numpy as np
+        >>> import oneflow as flow
+        
+        >>> x = np.array([-0.5, 0, 0.5]).astype(np.float32)
+        >>> input = flow.Tensor(x)
+
+        >>> out = flow.F.gelu(input)
+        >>> out
+        tensor([-0.1543,  0.    ,  0.3457], dtype=oneflow.float32)
+
+    See    
+    :class:`~oneflow.nn.GELU` for more details.
  
-#     """
-# )
+    """
+)
 
-# add_docstr(
-#     oneflow.F.log_sigmoid,
-#     r"""
-#     log_sigmoid(x: Tensor) -> Tensor 
+add_docstr(
+    oneflow.F.log_sigmoid,
+    r"""
+    log_sigmoid(x: Tensor) -> Tensor 
 
-#     Applies the element-wise function:
+    Applies the element-wise function:
 
-#     .. math::
-#         \\text{log_sigmoid}(x) = \\log\\left(\\frac{ 1 }{ 1 + \\exp(-x)}\\right)
+    .. math::
+        \text{log_sigmoid}(x) = \log\left(\frac{ 1 }{ 1 + \exp(-x)}\right)
    
-#     See :class:`~oneflow.nn.LogSigmoid` for more details.
+    For example:
 
-#     """,
-# )
+    .. code-block:: python
+
+
+        >>> import numpy as np
+        >>> import oneflow as flow
+        
+        >>> x = np.array([-0.5, 0, 0.5]).astype(np.float32)
+        >>> input = flow.Tensor(x)     
+          
+        >>> out = flow.F.log_sigmoid(input)
+        >>> out
+        tensor([-0.9741, -0.6931, -0.4741], dtype=oneflow.float32)
+        
+    See :class:`~oneflow.nn.LogSigmoid` for more details.
+
+    """,
+)
 
 # add_docstr(
 #     oneflow.F.softsign,
@@ -106,7 +134,7 @@ add_docstr(
 
 #     .. math::
 
-#         out = \\frac{e^x-e^{-x}}{e^x+e^{-x}}
+#         out = \frac{e^x-e^{-x}}{e^x+e^{-x}}
 
 #     See :class:`~oneflow.nn.Tanh` for more details.
     
@@ -120,7 +148,7 @@ add_docstr(
 
 #     .. math::
     
-#         \\text{silu}(x) = x * sigmoid(x)
+#         \text{silu}(x) = x * sigmoid(x)
     
     
 
@@ -140,7 +168,7 @@ add_docstr(
 #    Applies the element-wise function:
 
 #     .. math::
-#         \\text{mish}(x) = x * \\text{tanh}(\\text{softplus}(x))
+#         \text{mish}(x) = x * \text{tanh}(\text{softplus}(x))
 
 
 #     See :
@@ -158,7 +186,7 @@ add_docstr(
 #     Applies the element-wise function:
 
 #     .. math::
-#         y = \\frac{x - \\mathrm{E}[x]}{ \\sqrt{\\mathrm{Var}[x] + \\epsilon}} * \\gamma + \\beta
+#         y = \frac{x - \mathrm{E}[x]}{ \sqrt{\mathrm{Var}[x] + \epsilon}} * \gamma + \beta
 
 
 #     See :
