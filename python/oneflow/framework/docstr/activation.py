@@ -68,5 +68,17 @@ See :class:`~oneflow.nn.Hardswish` for more details.
     https://arxiv.org/abs/1905.02244
     """,
 )
+add_docstr(
+    oneflow.F.sigmoid,
+    r"""
+sigmoid(input) -> Tensor
+
+Applies the element-wise function :math:`\text{Sigmoid}(x) = \frac{1}{1 + \exp(-x)}`
+
+See :class:`~oneflow.nn.Sigmoid` for more details.
+
+    """,
+)
+
 
 
