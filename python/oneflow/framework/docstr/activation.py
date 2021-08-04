@@ -17,7 +17,7 @@ import oneflow
 from oneflow.framework.docstr.utils import add_docstr
 
 add_docstr(
-    oneflow.F.prelu,  
+    oneflow.F.prelu,
     r"""
     prelu(x: Tensor, alpha: Tensor) -> Tensor  
 
@@ -42,12 +42,12 @@ add_docstr(
     See
     :class:`~oneflow.nn.PReLU` for more details.
  
-    """
+    """,
 )
 
 
 add_docstr(
-    oneflow.F.gelu,  
+    oneflow.F.gelu,
     r"""
     gelu(x: Tensor) -> Tensor 
 
@@ -73,12 +73,12 @@ add_docstr(
     See    
     :class:`~oneflow.nn.GELU` for more details.
  
-    """
+    """,
 )
 
 
 add_docstr(
-    oneflow.F.softmax,  
+    oneflow.F.softmax,
     r"""
     softmax(x: Tensor) -> Tensor 
 
@@ -91,7 +91,7 @@ add_docstr(
     """,
 )
 add_docstr(
-    oneflow.F.softplus,  
+    oneflow.F.softplus,
     r"""
     softplus(x: Tensor) -> Tensor 
 
@@ -105,7 +105,7 @@ add_docstr(
 )
 
 add_docstr(
-    oneflow.F.tanh,  
+    oneflow.F.tanh,
     r"""
     tanh(x: Tensor) -> Tensor 
 
@@ -178,8 +178,7 @@ add_docstr(
 )
 
 
-
-add_docstr(   
+add_docstr(
     oneflow.F.silu,
     r"""
     silu(x: Tensor) -> Tensor
@@ -208,7 +207,6 @@ add_docstr(
     
     """,
 )
-
 
 
 add_docstr(
@@ -241,7 +239,6 @@ add_docstr(
     
     """,
 )
-
 
 
 add_docstr(
@@ -393,6 +390,3 @@ add_docstr(
         tensor([1.0507, 2.1014, 3.1521], dtype=oneflow.float32)
     """,
 )
-
-
-

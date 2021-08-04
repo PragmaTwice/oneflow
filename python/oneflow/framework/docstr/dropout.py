@@ -17,7 +17,7 @@ import oneflow
 from oneflow.framework.docstr.utils import add_docstr
 
 add_docstr(
-    oneflow.F.dropout,  
+    oneflow.F.dropout,
     r"""
     dropout(x: Tensor, p:float = 0.5, generator :Generator = None) -> Tensor 
     
@@ -85,5 +85,5 @@ add_docstr(
     
     See :class:`~oneflow.nn.Dropout` for details.   
  
-    """
+    """,
 )
