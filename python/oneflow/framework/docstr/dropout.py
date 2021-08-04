@@ -30,7 +30,13 @@ add_docstr(
     tensor with probability :attr:`p` using samples from a Bernoulli
     distribution.
 
-    Parameter generator is s new parameter compare to torch.nn.functional.dropout.
+
+    Description of Parameter misalignment:
+
+    Parameter generator : oneflow.F.dropout have it but torch.nn.functional.dropout do not.
+    
+    Parameter training : torch.nn.functional.dropout have it but oneflow.F.dropout do not.
+
     Args:      
         p: (float)probability of an element to be zeroed. Default: 0.5        
         generator(Generator, optional):  a pseudorandom number generator for sampling
@@ -46,6 +52,7 @@ add_docstr(
     .. code-block:: python
 
         >>> import numpy as np
+
         >>> import oneflow as flow
 
        
@@ -57,7 +64,7 @@ add_docstr(
         ...    ]
         ... )
         >>> x = flow.Tensor(arr)
-        >>> y = flow.F.dropout(x,p=0) 
+        >>> y = flow.F.dropout(x, p=0) 
         >>> y #doctest: +ELLIPSIS
         tensor([[-0.7797,  0.2264,  0.2458,  0.4163],
                 ...
@@ -72,7 +79,7 @@ add_docstr(
         ... )
         >>> x = flow.Tensor(arr)    
         >>> generator = flow.Generator()
-        >>> y = flow.F.dropout(x,0.5,generator) 
+        >>> y = flow.F.dropout(x, 0.5, generator) 
       
 
     
