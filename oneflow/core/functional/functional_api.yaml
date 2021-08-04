@@ -886,3 +886,7 @@
 - name: "reduce_sum_like"
   signature: "Tensor ReduceSumLike(Tensor in, Tensor like, *,Int32List axis)"
   bind_python: True
+
+- name: "logical_not"
+  signature: "Bool LogicalNot(Tensor x, *, Bool inplace=False)"
+  bind_python: True
