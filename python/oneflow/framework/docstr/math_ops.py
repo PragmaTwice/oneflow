@@ -35,7 +35,6 @@ add_docstr(
     .. code-block:: python
 
         >>> import oneflow as flow
-
         >>> import numpy as np
 
         >>> x1 = flow.Tensor(np.array([-0.5461,  0.1347, -2.7266, -0.2746]).astype(np.float32))
@@ -66,7 +65,6 @@ add_docstr(
     .. code-block:: python
 
         >>> import oneflow as flow
-
         >>> import numpy as np
 
         >>> x = np.array([1.4309,  1.2706, -0.8562,  0.9796])

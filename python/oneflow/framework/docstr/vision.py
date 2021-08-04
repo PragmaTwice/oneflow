@@ -33,7 +33,6 @@ add_docstr(
     .. code-block:: python
 
         >>> import oneflow as flow
-
         >>> import numpy as np
 
         >>> pad = [2, 2, 1, 1]

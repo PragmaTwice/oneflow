@@ -37,7 +37,6 @@ add_docstr(
     .. code-block:: python
 
         >>> import numpy as np
-
         >>> import oneflow as flow
 
         >>> arr = np.array(

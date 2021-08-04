@@ -27,7 +27,7 @@ add_docstr(
 
     See :class:`~oneflow.nn.Conv1d` for details and output shape.
 
-        """,
+    """,
 )
 add_docstr(
     oneflow.F.conv2d,
@@ -40,7 +40,7 @@ add_docstr(
 
     See :class:`~oneflow.nn.Conv2d` for details and output shape.
         
-        """,
+    """,
 )
 add_docstr(
     oneflow.F.conv3d,
@@ -53,5 +53,5 @@ add_docstr(
 
     See :class:`~oneflow.nn.Conv3d` for details and output shape.
         
-        """,
+    """,
 )
