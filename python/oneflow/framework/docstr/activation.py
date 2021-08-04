@@ -31,7 +31,6 @@ add_docstr(
     .. code-block:: python
 
         >>> import numpy as np
-
         >>> import oneflow as flow
 
         >>> x = flow.Tensor(np.asarray([[[[1, -2], [3, 4]]]]), dtype=flow.float32)
@@ -62,7 +61,6 @@ add_docstr(
     .. code-block:: python
 
         >>> import numpy as np
-
         >>> import oneflow as flow
         
         >>> x = np.array([-0.5, 0, 0.5]).astype(np.float32)
@@ -136,7 +134,6 @@ add_docstr(
 
 
         >>> import numpy as np
-
         >>> import oneflow as flow
         
         >>> x = np.array([-0.5, 0, 0.5]).astype(np.float32)
@@ -167,7 +164,6 @@ add_docstr(
     .. code-block:: python
     
         >>> import numpy as np
-
         >>> import oneflow as flow
 
         >>> x = np.array([1, 2, 3]).astype(np.float32)
@@ -198,7 +194,6 @@ add_docstr(
     .. code-block:: python
     
         >>> import numpy as np
-
         >>> import oneflow as flow
 
 
@@ -230,7 +225,6 @@ add_docstr(
     .. code-block:: python
 
         >>> import numpy as np
-
         >>> import oneflow as flow
         
         >>> x = np.array([1, 2, 3]).astype(np.float32)
@@ -275,7 +269,7 @@ add_docstr(
         inplace: If set to ``True``, will do this operation in-place. Default: ``False``
 
     See :class:`~oneflow.nn.Hardsigmoid` for more details.
-        """,
+    """,
 )
 add_docstr(
     oneflow.F.hardswish,
@@ -297,7 +291,7 @@ add_docstr(
 
     .. _`Searching for MobileNetV3`:
         https://arxiv.org/abs/1905.02244
-        """,
+    """,
 )
 add_docstr(
     oneflow.F.sigmoid,
@@ -313,7 +307,6 @@ add_docstr(
     .. code-block:: python
 
         >>> import numpy as np
-
         >>> import oneflow as flow
 
         >>> x = flow.Tensor(np.array([0.81733328, 0.43621480, 0.10351428]))
@@ -322,7 +315,7 @@ add_docstr(
         >>> out
         tensor([0.6937, 0.6074, 0.5259], dtype=oneflow.float32)
 
-        """,
+    """,
 )
 
 add_docstr(
@@ -333,7 +326,7 @@ add_docstr(
     Applies the HardTanh function element-wise. See :class:`~oneflow.nn.Hardtanh` for more
     details.
 
-        """,
+    """,
 )
 add_docstr(
     oneflow.F.leaky_relu,
@@ -345,7 +338,7 @@ add_docstr(
 
     See :class:`~oneflow.nn.LeakyReLU` for more details.
 
-        """,
+    """,
 )
 add_docstr(
     oneflow.F.elu,
@@ -355,14 +348,13 @@ add_docstr(
     Applies element-wise,
         :math:`\text{ELU}(x) = \max(0,x) + \min(0, \alpha * (\exp(x) - 1))`.
 
-        See :class:`~oneflow.nn.ELU` for more details.
+    See :class:`~oneflow.nn.ELU` for more details.
 
     For examples:
 
     .. code-block:: python
 
         >>> import numpy as np
-
         >>> import oneflow as flow
 
         >>> x = np.array([-0.5, 0, 0.5]).astype(np.float32)
@@ -370,7 +362,7 @@ add_docstr(
         >>> out = flow.nn.functional.elu(input, alpha=1.0)
         >>> out
         tensor([-0.3935,  0.    ,  0.5   ], dtype=oneflow.float32)
-        """,
+    """,
 )
 add_docstr(
     oneflow.F.selu,
@@ -382,14 +374,13 @@ add_docstr(
         with :math:`\alpha=1.6732632423543772848170429916717` and
         :math:`scale=1.0507009873554804934193349852946`.
 
-        See :class:`~oneflow.nn.SELU` for more details.
+    See :class:`~oneflow.nn.SELU` for more details.
 
     For examples:
 
     .. code-block:: python
 
         >>> import numpy as np
-
         >>> import oneflow as flow
 
         >>> x = np.array([1, 2, 3]).astype(np.float32)
@@ -397,5 +388,5 @@ add_docstr(
         >>> out = flow.nn.functional.selu(input)
         >>> out
         tensor([1.0507, 2.1014, 3.1521], dtype=oneflow.float32)
-        """,
+    """,
 )

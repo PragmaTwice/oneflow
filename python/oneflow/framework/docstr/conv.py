@@ -26,7 +26,6 @@ add_docstr(
     Applies a 1D convolution over an input signal composed of several input
     planes.
 
-
     See :class:`~oneflow.nn.Conv1d` for details and output shape.
 
     Args:
@@ -125,5 +124,5 @@ add_docstr(
         zero_point: quantization zero_point for the output. Default: 0
         dtype: quantization data type to use. Default: ``torch.quint8``
         
-        """,
+    """,
 )
