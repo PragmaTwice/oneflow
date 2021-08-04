@@ -28,4 +28,4 @@ Functional operations for neural networks
 .. autofunction:: silu
 .. autofunction:: mish 
 .. autofunction:: dropout 
-.. autofunction:: smooth_l1_loss
+.. autofunction:: upsample 

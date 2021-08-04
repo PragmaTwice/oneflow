@@ -33,10 +33,12 @@ add_docstr(
     .. code-block:: python
 
         >>> import oneflow as flow
+
         >>> import numpy as np
+
         >>> pad = [2, 2, 1, 1]
         >>> input = flow.Tensor(np.arange(18).reshape((1, 2, 3, 3)).astype(np.float32))
-        >>> output = flow.F.pad(input,pad, mode="replicate")
+        >>> output = flow.F.pad(input, pad, mode = "replicate")
         >>> output.shape
         flow.Size([1, 2, 5, 7])
         >>> output
@@ -51,7 +53,7 @@ add_docstr(
                   [12., 12., 12., 13., 14., 14., 14.],
                   [15., 15., 15., 16., 17., 17., 17.],
                   [15., 15., 15., 16., 17., 17., 17.]]]], dtype=oneflow.float32)
-                  
+
     See :class:`oneflow.nn.ConstantPad2d`, :class:`ooneflow.nn.ReflectionPad2d`, and
         :class:`ooneflow.nn.ReplicationPad2d` for concrete examples on how each of the
         padding modes works.
@@ -61,7 +63,7 @@ add_docstr(
 add_docstr(
     oneflow.F.upsample,
     r"""
-    upsample(x: Tensor, height_scale: Float, width_scale: Float, align_corners: Bool,interpolation: str,data_format: str = "channels_first") -> Tensor
+    upsample(x: Tensor, height_scale: Float, width_scale: Float, align_corners: Bool, interpolation: str, data_format: str = "channels_first") -> Tensor
   
     Upsample a given multi-channel 2D (spatial) data.
 
@@ -101,6 +103,7 @@ add_docstr(
     .. code-block:: python
 
         >>> import numpy as np
+
         >>> import oneflow as flow
 
         >>> input = flow.Tensor(np.arange(1, 5).reshape((1, 1, 2, 2)), dtype=flow.float32)  

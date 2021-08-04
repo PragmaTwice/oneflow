@@ -31,11 +31,12 @@ add_docstr(
     .. code-block:: python
 
         >>> import numpy as np
+
         >>> import oneflow as flow
 
         >>> x = flow.Tensor(np.asarray([[[[1, -2], [3, 4]]]]), dtype=flow.float32)
         >>> alpha = flow.nn.Parameter(flow.Tensor(1, 1, 1).fill_(0.25))
-        >>> print(flow.F.prelu(x,alpha).numpy())
+        >>> print(flow.F.prelu(x, alpha).numpy())
         [[[[ 1.  -0.5]
            [ 3.   4. ]]]]
    
@@ -61,6 +62,7 @@ add_docstr(
     .. code-block:: python
 
         >>> import numpy as np
+
         >>> import oneflow as flow
         
         >>> x = np.array([-0.5, 0, 0.5]).astype(np.float32)
@@ -116,8 +118,6 @@ add_docstr(
         out = \frac{e^x-e^{-x}}{e^x+e^{-x}}
 
     See :class:`~oneflow.nn.Tanh` for more details.
-
-
     """,
 )
 add_docstr(
@@ -136,6 +136,7 @@ add_docstr(
 
 
         >>> import numpy as np
+
         >>> import oneflow as flow
         
         >>> x = np.array([-0.5, 0, 0.5]).astype(np.float32)
@@ -166,7 +167,9 @@ add_docstr(
     .. code-block:: python
     
         >>> import numpy as np
+
         >>> import oneflow as flow
+
         >>> x = np.array([1, 2, 3]).astype(np.float32)
         >>> input = flow.Tensor(x) 
         >>> out = flow.F.softsign(input)
@@ -179,41 +182,13 @@ add_docstr(
 )
 
 
-add_docstr(
-    oneflow.F.tanh,
-    r""" 
-    tanh(x: Tensor) -> Tensor 
 
-    This operator computes the hyperbolic tangent value of Tensor.
-
-    The equation is:
-
-    .. math::
-
-        out = \frac{e^x-e^{-x}}{e^x+e^{-x}}
-
-    For example:
-
-    .. code-block:: python
-
-        >>> import numpy as np
-        >>> import oneflow as flow
-        
-        >>> x = np.array([-1, 0, 1]).astype(np.float32)
-        >>> input = flow.Tensor(x)    
-        >>> out = flow.F.tanh(input)
-        >>> out
-        tensor([-0.7616,  0.    ,  0.7616], dtype=oneflow.float32)
-
-    See :class:`~oneflow.nn.Tanh` for more details.
-    
-    """,
-)
-
-add_docstr(
+add_docstr(   
     oneflow.F.silu,
-    r""" 
-    tanh(x: Tensor) -> Tensor 
+    r"""
+    silu(x: Tensor) -> Tensor
+
+    The formula is: 
 
     .. math::
     
@@ -224,6 +199,7 @@ add_docstr(
     .. code-block:: python
     
         >>> import numpy as np
+
         >>> import oneflow as flow
 
 
@@ -243,19 +219,20 @@ add_docstr(
 add_docstr(
     oneflow.F.mish,
     r""" 
-    (x: Tensor) -> Tensor 
+    mish(x: Tensor) -> Tensor 
 
-   Applies the element-wise function:
+    Applies the element-wise function:
 
     .. math::
         \text{mish}(x) = x * \text{tanh}(\text{softplus}(x))
 
-    
+
     For example:
 
     .. code-block:: python
 
         >>> import numpy as np
+
         >>> import oneflow as flow
         
         >>> x = np.array([1, 2, 3]).astype(np.float32)
@@ -286,138 +263,144 @@ add_docstr(
 add_docstr(
     oneflow.F.hardsigmoid,
     r"""
-hardsigmoid(x: Tensor)-> Tensor
+    hardsigmoid(x: Tensor)-> Tensor
 
-Applies the element-wise function
+    Applies the element-wise function
 
-.. math::
-    \text{Hardsigmoid}(x) = \begin{cases}
-        0 & \text{if~} x \le -3, \\
-        1 & \text{if~} x \ge +3, \\
-        x / 6 + 1 / 2 & \text{otherwise}
-    \end{cases}
+    .. math::
+        \text{Hardsigmoid}(x) = \begin{cases}
+            0 & \text{if~} x \le -3, \\
+            1 & \text{if~} x \ge +3, \\
+            x / 6 + 1 / 2 & \text{otherwise}
+        \end{cases}
 
-Args:
-    inplace: If set to ``True``, will do this operation in-place. Default: ``False``
+    Args:
+        inplace: If set to ``True``, will do this operation in-place. Default: ``False``
 
-See :class:`~oneflow.nn.Hardsigmoid` for more details.
-    """,
+    See :class:`~oneflow.nn.Hardsigmoid` for more details.
+        """,
 )
 add_docstr(
     oneflow.F.hardswish,
     r"""
-hardswish(x: Tensor)-> Tensor
+    hardswish(x: Tensor)-> Tensor
 
-Applies the hardswish function, element-wise, as described in the paper:
+    Applies the hardswish function, element-wise, as described in the paper:
 
-`Searching for MobileNetV3`_.
+    `Searching for MobileNetV3`_.
 
-.. math::
-    \text{Hardswish}(x) = \begin{cases}
-        0 & \text{if~} x \le -3, \\
-        x & \text{if~} x \ge +3, \\
-        x \cdot (x + 3) /6 & \text{otherwise}
-    \end{cases}
+    .. math::
+        \text{Hardswish}(x) = \begin{cases}
+            0 & \text{if~} x \le -3, \\
+            x & \text{if~} x \ge +3, \\
+            x \cdot (x + 3) /6 & \text{otherwise}
+        \end{cases}
 
-See :class:`~oneflow.nn.Hardswish` for more details.
+    See :class:`~oneflow.nn.Hardswish` for more details.
 
-.. _`Searching for MobileNetV3`:
-    https://arxiv.org/abs/1905.02244
-    """,
+    .. _`Searching for MobileNetV3`:
+        https://arxiv.org/abs/1905.02244
+        """,
 )
 add_docstr(
     oneflow.F.sigmoid,
     r"""
-sigmoid(input) -> Tensor
+    sigmoid(input) -> Tensor
 
-Applies the element-wise function :math:`\text{Sigmoid}(x) = \frac{1}{1 + \exp(-x)}`
+    Applies the element-wise function :math:`\text{Sigmoid}(x) = \frac{1}{1 + \exp(-x)}`
 
-See :class:`~oneflow.nn.Sigmoid` for more details.
+    See :class:`~oneflow.nn.Sigmoid` for more details.
 
-For examples:
+    For examples:
 
-.. code-block:: python
+    .. code-block:: python
 
-    >>> import numpy as np
-    >>> import oneflow as flow
-    >>> x = flow.Tensor(np.array([0.81733328, 0.43621480, 0.10351428]))
-    >>> input = flow.Tensor(x)
-    >>> out = flow.nn.functional.sigmoid(input)
-    >>> out
-    tensor([0.6937, 0.6074, 0.5259], dtype=oneflow.float32)
+        >>> import numpy as np
 
-    """,
+        >>> import oneflow as flow
+
+        >>> x = flow.Tensor(np.array([0.81733328, 0.43621480, 0.10351428]))
+        >>> input = flow.Tensor(x)
+        >>> out = flow.nn.functional.sigmoid(input)
+        >>> out
+        tensor([0.6937, 0.6074, 0.5259], dtype=oneflow.float32)
+
+        """,
 )
 
 add_docstr(
     oneflow.F.hardtanh,
     r"""
-hardtanh(input, min_val=-1., max_val=1.) -> Tensor
+    hardtanh(input, min_val=-1., max_val=1.) -> Tensor
 
-Applies the HardTanh function element-wise. See :class:`~oneflow.nn.Hardtanh` for more
-details.
+    Applies the HardTanh function element-wise. See :class:`~oneflow.nn.Hardtanh` for more
+    details.
 
-    """,
+        """,
 )
 add_docstr(
     oneflow.F.leaky_relu,
     r"""
-leaky_relu(x: Tensor, *,  alpha :Float) -> Tensor
+    leaky_relu(x: Tensor,  alpha :Float) -> Tensor
 
-Applies element-wise,
-:math:`\text{LeakyReLU}(x) = \max(0, x) + \text{negative\_slope} * \min(0, x)`
+    Applies element-wise,
+    :math:`\text{LeakyReLU}(x) = \max(0, x) + \text{negative\_slope} * \min(0, x)`
 
-See :class:`~oneflow.nn.LeakyReLU` for more details.
+    See :class:`~oneflow.nn.LeakyReLU` for more details.
 
-    """,
+        """,
 )
 add_docstr(
     oneflow.F.elu,
     r"""
-elu(x: Tensor, *,  alpha :Float) -> Tensor
+    elu(x: Tensor, alpha :Float) -> Tensor
 
-Applies element-wise,
-    :math:`\text{ELU}(x) = \max(0,x) + \min(0, \alpha * (\exp(x) - 1))`.
+    Applies element-wise,
+        :math:`\text{ELU}(x) = \max(0,x) + \min(0, \alpha * (\exp(x) - 1))`.
 
-    See :class:`~oneflow.nn.ELU` for more details.
+        See :class:`~oneflow.nn.ELU` for more details.
 
-For examples:
+    For examples:
 
-.. code-block:: python
+    .. code-block:: python
 
-    >>> import numpy as np
-    >>> import oneflow as flow
-    >>> x = np.array([-0.5, 0, 0.5]).astype(np.float32)
-    >>> input = flow.Tensor(x)
-    >>> out = flow.nn.functional.elu(input,alpha=1.0)
-    >>> out
-    tensor([-0.3935,  0.    ,  0.5   ], dtype=oneflow.float32)
-    """,
+        >>> import numpy as np
+
+        >>> import oneflow as flow
+
+        >>> x = np.array([-0.5, 0, 0.5]).astype(np.float32)
+        >>> input = flow.Tensor(x)
+        >>> out = flow.nn.functional.elu(input, alpha=1.0)
+        >>> out
+        tensor([-0.3935,  0.    ,  0.5   ], dtype=oneflow.float32)
+        """,
 )
 add_docstr(
     oneflow.F.selu,
     r"""
-selu(x: Tensor, *) -> Tensor
+    selu(x: Tensor) -> Tensor
 
-Applies element-wise,
-    :math:`\text{SELU}(x) = scale * (\max(0,x) + \min(0, \alpha * (\exp(x) - 1)))`,
-    with :math:`\alpha=1.6732632423543772848170429916717` and
-    :math:`scale=1.0507009873554804934193349852946`.
+    Applies element-wise,
+        :math:`\text{SELU}(x) = scale * (\max(0,x) + \min(0, \alpha * (\exp(x) - 1)))`,
+        with :math:`\alpha=1.6732632423543772848170429916717` and
+        :math:`scale=1.0507009873554804934193349852946`.
 
-    See :class:`~oneflow.nn.SELU` for more details.
+        See :class:`~oneflow.nn.SELU` for more details.
 
-For examples:
+    For examples:
 
-.. code-block:: python
+    .. code-block:: python
 
-    >>> import numpy as np
-    >>> import oneflow as flow
-    >>> x = np.array([1, 2, 3]).astype(np.float32)
-    >>> input = flow.Tensor(x)
-    >>> out = flow.nn.functional.selu(input)
-    >>> out
-    tensor([1.0507, 2.1014, 3.1521], dtype=oneflow.float32)
-    """,
+        >>> import numpy as np
+
+        >>> import oneflow as flow
+
+        >>> x = np.array([1, 2, 3]).astype(np.float32)
+        >>> input = flow.Tensor(x)
+        >>> out = flow.nn.functional.selu(input)
+        >>> out
+        tensor([1.0507, 2.1014, 3.1521], dtype=oneflow.float32)
+        """,
 )
 
 

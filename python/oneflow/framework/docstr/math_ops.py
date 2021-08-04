@@ -35,12 +35,14 @@ add_docstr(
     .. code-block:: python
 
         >>> import oneflow as flow
+
         >>> import numpy as np
+
         >>> x1 = flow.Tensor(np.array([-0.5461,  0.1347, -2.7266, -0.2746]).astype(np.float32))
         >>> y1 = flow.F.sin(x1)
         >>> y1
         tensor([-0.5194,  0.1343, -0.4032, -0.2712], dtype=oneflow.float32)
-        >>> x2 = flow.Tensor(np.array([-1.4, 2.6, 3.7]).astype(np.float32),device=flow.device('cuda'))
+        >>> x2 = flow.Tensor(np.array([-1.4, 2.6, 3.7]).astype(np.float32), device=flow.device('cuda'))
         >>> y2 = flow.F.sin(x2)
         >>> y2
         tensor([-0.9854,  0.5155, -0.5298], device='cuda:0', dtype=oneflow.float32)
@@ -64,7 +66,9 @@ add_docstr(
     .. code-block:: python
 
         >>> import oneflow as flow
+
         >>> import numpy as np
+
         >>> x = np.array([1.4309,  1.2706, -0.8562,  0.9796])
         >>> x = flow.Tensor(x, dtype=flow.float32)
         >>> y = flow.F.cos(x)
