@@ -20,6 +20,9 @@ add_docstr(
     oneflow.F.dropout,  
     r"""
     dropout(x: Tensor, p:float = 0.5, generator :Generator = None) -> Tensor 
+    
+    The documentation is referenced from:
+    https://pytorch.org/docs/stable/generated/torch.nn.functional.dropout.html
 
     During training, randomly zeroes some of the elements of the input
     tensor with probability :attr:`p` using samples from a Bernoulli

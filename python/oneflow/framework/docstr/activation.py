@@ -76,6 +76,50 @@ add_docstr(
     """
 )
 
+
+add_docstr(
+    oneflow.F.softmax,  
+    r"""
+    softmax(x: Tensor) -> Tensor 
+
+    Softmax is defined as:
+
+    .. math::
+        \text{Softmax}(x_{i}) = \frac{\\exp(x_i)}{\sum_j \exp(x_j)}
+    
+    See :class:`~oneflow.nn.Softmax` for more details.
+    """,
+)
+add_docstr(
+    oneflow.F.softplus,  
+    r"""
+    softplus(x: Tensor) -> Tensor 
+
+    Applies the element-wise function:
+
+    .. math::
+        \text{Softplus}(x) = \frac{1}{\beta} * \log(1 + \exp(\beta * x))    
+    
+    See :class:`~oneflow.nn.Softplus` for more details.
+    """,
+)
+
+add_docstr(
+    oneflow.F.tanh,  
+    r"""
+    tanh(x: Tensor) -> Tensor 
+
+    The equation is:
+
+    .. math::
+
+        out = \frac{e^x-e^{-x}}{e^x+e^{-x}}
+
+    See :class:`~oneflow.nn.Tanh` for more details.
+
+
+    """,
+)
 add_docstr(
     oneflow.F.log_sigmoid,
     r"""
