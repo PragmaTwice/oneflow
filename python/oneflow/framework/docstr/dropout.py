@@ -21,6 +21,8 @@ add_docstr(
     r"""
     dropout(x: Tensor, p:float = 0.5, generator :Generator = None) -> Tensor 
     
+
+
     The documentation is referenced from:
     https://pytorch.org/docs/stable/generated/torch.nn.functional.dropout.html
 
@@ -28,6 +30,7 @@ add_docstr(
     tensor with probability :attr:`p` using samples from a Bernoulli
     distribution.
 
+    Parameter generator is s new parameter compare to torch.nn.functional.dropout.
     Args:      
         p: (float)probability of an element to be zeroed. Default: 0.5        
         generator(Generator, optional):  a pseudorandom number generator for sampling
