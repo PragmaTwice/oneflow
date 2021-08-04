@@ -98,5 +98,3 @@ add_docstr(
         >>> output = flow.nn.functional.adaptive_avg_pool3d(input, (2, 2, 2))
     """,
 )
-
-
