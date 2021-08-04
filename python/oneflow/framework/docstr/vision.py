@@ -25,10 +25,7 @@ add_docstr(
         input (Tensor): N-dimensional tensor
         pad (List[int]): 4-elements List
         mode: ``'constant'``, ``'reflect'``, ``'replicate'`` or ``'circular'``.
-            Default: ``'constant'``
-        See :class:`oneflow.nn.ConstantPad2d`, :class:`ooneflow.nn.ReflectionPad2d`, and
-        :class:`ooneflow.nn.ReplicationPad2d` for concrete examples on how each of the
-        padding modes works.
+            Default: ``'constant'``        
         value: fill value for ``'constant'`` padding. Default: ``0``
 
     For example:
@@ -54,6 +51,11 @@ add_docstr(
                   [12., 12., 12., 13., 14., 14., 14.],
                   [15., 15., 15., 16., 17., 17., 17.],
                   [15., 15., 15., 16., 17., 17., 17.]]]], dtype=oneflow.float32)
+                  
+    See :class:`oneflow.nn.ConstantPad2d`, :class:`ooneflow.nn.ReflectionPad2d`, and
+        :class:`ooneflow.nn.ReplicationPad2d` for concrete examples on how each of the
+        padding modes works.
+        
     """,
 )
 add_docstr(
