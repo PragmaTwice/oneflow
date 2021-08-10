@@ -37,7 +37,7 @@ static PyObject* PyFunction(PyObject* self, PyObject* args) {
       << "The maximum count of positional arguments is " << SchemaT::max_positionals;
 
   // TODO(): Check argument types.
-  std::vector<PythonArg> _args(SchemaT::max_args);
+  std::array<PythonArg, SchemaT::max_args> _args;
   for (int i = 0; i < nargs; ++i) { _args[i] = PythonArg(PyTuple_GetItem(args, i)); }
   for (int i = nargs; i < SchemaT::max_args; ++i) {
     const auto& arg = SchemaT::argument_def.at(i);
@@ -71,7 +71,7 @@ static PyObject* PyFunctionWithKeywords(PyObject* self, PyObject* args, PyObject
       << "The maximum count of keyword arguments is " << SchemaT::max_keywords;
 
   // TODO(): Check argument types.
-  std::vector<PythonArg> _args(SchemaT::max_args);
+  std::array<PythonArg, SchemaT::max_args> _args;
   for (int i = 0; i < nargs; ++i) { _args[i] = PythonArg(PyTuple_GetItem(args, i)); }
   for (int i = nargs; i < SchemaT::max_args; ++i) {
     const auto& arg = SchemaT::argument_def.at(i);

@@ -23,6 +23,7 @@ limitations under the License.
 #include "oneflow/core/framework/tensor.h"
 #include "oneflow/core/framework/tensor_tuple.h"
 #include "oneflow/core/common/function_traits.h"
+#include "oneflow/core/common/cplusplus_14.h"
 
 #include "oneflow/core/profiler/profiler.h"
 
@@ -34,12 +35,13 @@ namespace detail {
 
 template<typename F, typename R>
 struct unpack_call_dispatcher {
-  template<size_t... I>
-  static R apply(const F& f, const std::vector<PythonArg>& args, std::index_sequence<I...>) {
+  template<size_t... I, size_t N>
+  static R apply(const F& f, const std::array<PythonArg, N>& args, std::index_sequence<I...>) {
     OF_PROFILER_RANGE_PUSH("functor call");
-    const auto& res = f(args[I]
-                            .As<oneflow::detail::remove_cvref_t<typename std::tuple_element<
-                                I, typename function_traits<F>::args_type>::type>>()...);
+    const auto& res =
+        f(args[I]
+              .template As<oneflow::detail::remove_cvref_t<typename std::tuple_element<
+                  I, typename function_traits<F>::args_type>::type>>()...);
     OF_PROFILER_RANGE_POP();
     return res;
   }
@@ -47,10 +49,10 @@ struct unpack_call_dispatcher {
 
 template<typename F, typename R>
 struct unpack_call {
-  static R apply(const F& f, const std::vector<PythonArg>& args) {
+  template<size_t N>
+  static R apply(const F& f, const std::array<PythonArg, N>& args) {
     constexpr size_t nargs = function_traits<F>::nargs;
-    CHECK_EQ_OR_THROW(nargs, args.size())
-        << "Requires " << nargs << " arguments, but " << args.size() << " is given.";
+    static_assert(nargs == N, "parameter number of `f` should equal to size of `args`");
     return unpack_call_dispatcher<F, R>::apply(f, args, std::make_index_sequence<nargs>{});
   }
 };
@@ -58,10 +60,10 @@ struct unpack_call {
 #define INSTANCE_MAYBE_UNPACK_CALL(K, R, return_fn)                                         \
   template<typename F>                                                                      \
   struct unpack_call<F, K> {                                                                \
-    static R apply(const F& f, const std::vector<PythonArg>& args) {                        \
+    template<size_t N>                                                                      \
+    static R apply(const F& f, const std::array<PythonArg, N>& args) {                      \
       constexpr size_t nargs = function_traits<F>::nargs;                                   \
-      CHECK_EQ_OR_THROW(nargs, args.size())                                                 \
-          << "Requires " << nargs << " arguments, but " << args.size() << " is given.";     \
+      static_assert(nargs == N, "parameter number of `f` should equal to size of `args`");  \
       return (return_fn)(                                                                   \
           unpack_call_dispatcher<F, K>::apply(f, args, std::make_index_sequence<nargs>{})); \
     }                                                                                       \
