@@ -37,8 +37,13 @@ struct WithDecorator final {
 };
 
 #define DECORATE(fn_ptr, decorator) \
-  static_cast<decltype(fn_ptr)>(    \
-      WithDecorator<decorator>::Decorate<decltype(fn_ptr)>::FuncPtr<fn_ptr>::value)
+  Decorate<decltype(fn_ptr), fn_ptr, decorator>()
+
+template <typename F, F fn_ptr, template <typename...> class decorator>
+constexpr auto Decorate() -> F {
+  return static_cast<F>(WithDecorator<decorator>::template Decorate<F>::template FuncPtr<fn_ptr>::value);
+}
+
 
 template<typename... Args>
 struct ThreadLocalCopiable;
