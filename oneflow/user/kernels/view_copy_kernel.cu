@@ -30,23 +30,16 @@ struct StrideParam {
     }
   }
 
-  __device__ void compute_index(int64_t offset, int ndim, int64_t index[]) const {
-    int64_t v = offset;
-  
-  #pragma unroll
-    for (int i = 0; i < ndim; ++i) {
-      int64_t idx = v / stride[i];
-      index[i] = idx;
-      v -= idx * stride[i];
-    }
-  }
-  
-  __device__ int64_t compute_offset(const int64_t index[], int ndim) const {
+  __device__ int64_t compute_offset(int64_t offset, int ndim, const StrideParam& other) const {
     int64_t v = 0;
-  
-  #pragma unroll
-    for (int i = 0; i < ndim; ++i) { v += index[i] * stride[i]; }
-  
+
+#pragma unroll
+    for (int i = 0; i < ndim; ++i) {
+      int64_t idx = offset / stride[i];
+      v += idx * other.stride[i];
+      offset -= idx * stride[i];
+    }
+
     return v;
   }
 };
@@ -54,12 +47,8 @@ struct StrideParam {
 __global__ void copy_view(int64_t count, size_t dsize,
                           StrideParam in_stride, StrideParam out_stride,
                           const char* in_dptr, char* out_dptr, int64_t ndim) {
-  int64_t in_index[SHAPE_MAX_AXIS_SIZE];
-
   CUDA_1D_KERNEL_LOOP_T(int64_t, out_offset, count) {
-
-    out_stride.compute_index(out_offset, ndim, in_index);
-    const int64_t in_offset = in_stride.compute_offset(in_index, ndim);
+    int64_t in_offset = out_stride.compute_offset(out_offset, ndim, in_stride);
 
     char *out_dptr_offset = out_dptr + out_offset * dsize;
     const char *in_dptr_offset = in_dptr + in_offset * dsize;
